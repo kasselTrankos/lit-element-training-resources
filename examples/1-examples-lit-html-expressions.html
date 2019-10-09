@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+            .my-style-class {
+                color: red;
+            }
+
+            div[disabled] {
+                color: gray;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>Example 1</h3>
+            <div class="example1"></div>
+            <h3>Example 2</h3>
+            <div class="example2"></div>
+            <h3>Example 3</h3>
+            <div class="example3"></div>
+            <h3>Example 4</h3>
+            <div class="example4"></div>
+        </div>
+        <script type="module">
+            import {html, render} from 'https://unpkg.com/lit-html?module';
+            import 'https://unpkg.com/@material/mwc-checkbox@latest/mwc-checkbox.js?module';
+            
+            /// Simple Attribute
+            const myTemplate1 = (data) => html`<div class=${data.cssClass}>Stylish text</div>`;
+
+            // Render the template to the document
+            render(myTemplate1({cssClass: 'my-style-class'}), document.querySelector('.example1'));
+
+            // /// Boolean attribute
+            // const myTemplate2 = (data) => html`<div ?disabled=${!data.active}>Stylish text.</div>`;
+            
+            // // Render the template to the document
+            // render(myTemplate2({active: false}), document.querySelector('.example2'));
+
+            // /// Bind to property
+            // const myTemplate3 = (data) => html` <mwc-checkbox .checked=${data.checked}></mwc-checkbox>`;
+
+            // // Render the template to the document
+            // render(myTemplate3({checked: true}), document.querySelector('.example3'));
+
+            // /// Event listeners
+            // const myTemplate4 = () => html`<button @click=${clickHandler}>Click Me!</button>`;
+
+            // const clickHandler = {
+            //     // handleEvent method is required.
+            //     handleEvent(e) { 
+            //         console.log('clicked!');
+            //     },
+            //     // event listener objects can also define zero or more of the event 
+            //     // listener options: capture, passive, and once.
+            //     capture: true,
+            // };
+
+            // // Render the template to the document
+            // render(myTemplate4(), document.querySelector('.example4'));
+
+        </script>
+    </body>
+</html>

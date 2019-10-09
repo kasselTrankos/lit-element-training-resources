@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <div>
+            <h3>Exercise 1</h3>
+            <div class="exercise1"></div>      
+        </div>
+        <script type="module">
+            import {html, render} from 'https://unpkg.com/lit-html?module';
+
+            // Render a header <h4> with title 'Result:'
+            // Render a <p> with a text with your 'last name, first name'. This should be an dinamic content
+            // Render a list <ul><li> with a list of colors
+            // Render a <p> that says 'TGIF' if 'isFriday' is true or 'Days to Friday:' using the given function
+            
+            /// Simple template
+            const myTemplate1 = () => ...
+
+            // Render the template to the document
+            render(...
+
+            // Calculate days to next friday
+            const daysToFriday = () => {
+                const dayOfWeek = 5;
+                const today = new Date();
+                const resultDate = new Date();
+                resultDate.setDate(today.getDate() + (7 + dayOfWeek - today.getDay() - 1) % 7 +1);
+                return Math.round((resultDate.getTime() - today) / (1000*60*60*24));
+            };
+                            
+        </script>
+    </body>
+</html>

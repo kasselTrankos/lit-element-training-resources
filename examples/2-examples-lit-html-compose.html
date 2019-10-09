@@ -1,0 +1,55 @@
+<html>
+    <body>
+        <div>
+            <h3>Example 1</h3>
+            <div class="example1"></div>
+            <h3>Example 2</h3>
+            <div class="example2"></div>
+            <h3>Example 3</h3>
+            <div class="example3"></div>
+            <h3>Example 4</h3>
+            <div class="example4"></div>
+            <h3>Example 5</h3>
+            <div class="example5"></div>            
+        </div>
+        <script type="module">
+            import {html, render} from 'https://unpkg.com/lit-html?module';
+            
+            /// Simple template
+            const myTemplate1 = () => html`<p>Hello World</p>`;
+
+            // Render the template to the document
+            render(myTemplate1(), document.querySelector('.example1'));
+
+            // /// Properties
+            // const myTemplate2 = (name) => html`<p>Hello ${name}</p>`;
+
+            // // Render the template to the document
+            // render(myTemplate2('LitHtml'), document.querySelector('.example2'));
+
+            // /// Loop
+            // const names = ['Carlos', 'Ana', 'Mateo', 'Juan', 'Lidia', 'Marta'];
+            // const myTemplate3 = (data) => html`<ul>${data.map(item => html`<li>${item}</li>`)}</ul>`;
+
+            // // Render the template to the document
+            // render(myTemplate3(names), document.querySelector('.example3'));
+
+            // /// Conditionals
+            // const isLoading = true;
+            // const myTemplate4 = (loading) => html`${loading ? html`<p> Waiting data` : html`<p> Your data is here</p>`}`;
+
+            // // Render the template to the document
+            // render(myTemplate4(isLoading), document.querySelector('.example4'));
+
+            // /// Nested
+            // const myHeader = html`<h1>Header</h1>`;
+            // const myTemplate5 = () => html`
+            //     ${myHeader}
+            //     <div>Here's my main page.</div>
+            // `;
+
+            // // Render the template to the document
+            // render(myTemplate5(), document.querySelector('.example5'));                              
+        </script>
+    </body>
+</html>

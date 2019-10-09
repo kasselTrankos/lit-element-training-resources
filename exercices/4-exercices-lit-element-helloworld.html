@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script type="module">
+            import {html, LitElement} from 'https://unpkg.com/lit-element?module';
+
+            // Extend the LitElement base class
+            class MyElement extends LitElement {
+
+                static get properties() {
+                    return {
+                        name: {
+                            type: String
+                        }
+                    }
+                }
+
+                constructor() {
+                    super();
+                    this.name = 'World';
+                }
+
+                render(){
+                    return html`
+                    <h2>Hello ${this.name}</h2>
+                    `;
+                }
+            }
+            // Register the new element with the browser.
+            customElements.define('my-element', MyElement);             
+        </script>
+
+        <my-element></my-element>
+        <!-- <my-element name="LitElement"></my-element> -->
+    </body>
+</html>
